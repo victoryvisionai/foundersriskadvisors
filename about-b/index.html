@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners | Founder Risk Advisors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #74142a;
+            --accent: #14512b;
+            --ink: #1a2230;
+            --ink-soft: #4a5568;
+            --bg: #ffffff;
+            --bg-alt: #eaf0eb;
+            --bg-tertiary: #dfdcd1;
+            --on-dark: #ffffff;
+            --border: #b7c8bc;
+            --gold: #c3a87a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            line-height: 1.7;
+            color: var(--ink);
+            background: var(--bg);
+            font-size: 18px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header img {
+            height: 40px;
+            width: auto;
+        }
+
+        .header-cta {
+            background: var(--accent);
+            color: var(--on-dark);
+            padding: 0.7rem 1.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .header-cta:hover {
+            opacity: 0.9;
+        }
+
+        section {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            padding: 6rem 5% 5rem;
+            text-align: center;
+            background: var(--bg-alt);
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-variant: small-caps;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            font-weight: 300;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        h1 .accent {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+            color: var(--ink-soft);
+            max-width: 800px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.6;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--on-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: opacity 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--primary);
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--on-dark);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        h2 em {
+            font-style: italic;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        h4 {
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-weight: 300;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--ink);
+        }
+
+        .promise-section {
+            background: var(--primary);
+            color: var(--on-dark);
+            text-align: center;
+            padding: 4rem 5%;
+        }
+
+        .promise-section h2 {
+            color: var(--on-dark);
+            font-size: 3rem;
+        }
+
+        .promise-section p {
+            color: var(--on-dark);
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 6px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .card svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 1.5rem;
+        }
+
+        .card h4 {
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: var(--ink-soft);
+            font-size: 1rem;
+            margin-bottom: 0;
+        }
+
+        ul {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        ul li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+            color: var(--ink);
+        }
+
+        ul li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            position: relative;
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--gold);
+            opacity: 0.3;
+            margin-bottom: 1rem;
+        }
+
+        .process-step h4 {
+            margin-bottom: 1rem;
+        }
+
+        .process-step p {
+            color: var(--ink-soft);
+            font-size: 1rem;
+        }
+
+        .dark-section {
+            background: var(--accent);
+            color: var(--on-dark);
+        }
+
+        .dark-section h2,
+        .dark-section h3,
+        .dark-section h4,
+        .dark-section p,
+        .dark-section li {
+            color: var(--on-dark);
+        }
+
+        .dark-section ul li:before {
+            color: var(--gold);
+        }
+
+        .alt-section {
+            background: var(--bg-alt);
+        }
+
+        .signal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .signal-item {
+            background: var(--bg);
+            padding: 1.5rem;
+            border-left: 3px solid var(--accent);
+            border-radius: 4px;
+        }
+
+        .signal-item p {
+            margin: 0;
+            color: var(--ink);
+        }
+
+        form {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            background: var(--bg);
+            padding: 3rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            color: var(--ink);
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            background: var(--accent);
+            color: var(--on-dark);
+            padding: 1rem;
+            border: none;
+            border-radius: 4px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            opacity: 0.9;
+        }
+
+        .thank-you {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-alt);
+            border-radius: 6px;
+            margin-top: 2rem;
+        }
+
+        .thank-you.visible {
+            display: block;
+        }
+
+        .thank-you h3 {
+            color: var(--accent);
+        }
+
+        footer {
+            background: var(--primary);
+            color: var(--on-dark);
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--on-dark);
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: var(--on-dark);
+            text-decoration: none;
+            margin: 0 1rem;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        footer a:hover {
+            opacity: 1;
+        }
+
+        .disclosure {
+            background: var(--bg-tertiary);
+            padding: 3rem 5%;
+            font-size: 0.9rem;
+            color: var(--ink-soft);
+            line-height: 1.6;
+        }
+
+        .disclosure p {
+            color: var(--ink-soft);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 4rem 5%;
+            }
+
+            .two-col {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 5%;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.15rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .card-grid, .process-grid, .signal-grid {
+                grid-template-columns: 1fr;
+            }
+
+            form {
+                padding: 2rem 1.5rem;
+            }
+        }
+    
+        /* --- logo sizing patch --- */
+        header img { height: clamp(40px, 6vw, 56px) !important; width: auto !important; }
+    </style>
+<style>[data-variant="B"] .cta-button,[data-variant="B"] a.btn,[data-variant="B"] button{border-radius:8px !important} [data-variant="B"] .hero h1{letter-spacing:-0.5px}
+        /* --- logo sizing patch --- */
+        header img { height: clamp(40px, 6vw, 56px) !important; width: auto !important; }
+    </style></head>
+<body data-variant="B">
+    <header>
+        <img src="https://res.cloudinary.com/dv94te4zt/image/upload/v1785164028/nkeyl8konds3bjs9ofxr.png" alt="Founder Risk Advisors logo">
+        <a href="https://calendly.com/andrewglaze/new-meeting" class="header-cta">Schedule a consultation</a>
+    </header>
+
+    <section class="hero">
+        <div class="eyebrow">Partners</div>
+        <h1>A specialist bench for <em class="accent">the cases outside your book</em></h1>
+        <p>Founder Risk Advisors works with benefits agencies, producer groups, wealth advisors, insurance professionals, executive benefits firms, CPAs, attorneys, M&A advisors, GT Securities affiliates, and other professional partners when a founder-led company presents a risk, continuity, benefits, or capital-readiness issue that sits outside a standard planning conversation.</p>
+        <div class="cta-group">
+            <a href="#partner-form" class="btn-primary">Become a Partner</a>
+            <a href="https://calendly.com/andrewglaze/new-meeting" class="btn-secondary">Book a Partner Intro Call</a>
+        </div>
+    </section>
+
+    <section class="promise-section">
+        <h2>Your client stays your client.</h2>
+        <p>This is the core rule. Founder Risk Advisors is not built to go around producers, benefits agencies, wealth advisors, or professional partners. We are built to help when a situation requires specialized attention, careful scoping, or access to the right execution partner.</p>
+    </section>
+
+    <section class="fade-in">
+        <div class="eyebrow">The Goal</div>
+        <h2>The goal is <em>simple</em></h2>
+        <div class="card-grid">
+            <div class="card">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z" stroke="#14512b" stroke-width="2"/>
+                    <path d="M16 24L22 30L32 18" stroke="#14512b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h4>Help the client solve the problem</h4>
+                <p>We bring specialized focus to founder dependency, key-person risk, buy-sell funding, executive benefits, and transaction readiness issues that require careful scoping and structured solutions.</p>
+            </div>
+            <div class="card">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 4C19.7565 4 15.6869 5.68571 12.6863 8.68629C9.68571 11.6869 8 15.7565 8 20C8 28 16 36 24 44C32 36 40 28 40 20C40 15.7565 38.3143 11.6869 35.3137 8.68629C32.3131 5.68571 28.2435 4 24 4Z" stroke="#74142a" stroke-width="2"/>
+                    <circle cx="24" cy="20" r="4" stroke="#74142a" stroke-width="2"/>
+                </svg>
+                <h4>Protect the partner relationship</h4>
+                <p>Your client relationship, your existing lines of business, your advisory role, and your visibility into the case remain intact throughout the engagement and beyond.</p>
+            </div>
+            <div class="card">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="8" y="12" width="32" height="28" rx="2" stroke="#c3a87a" stroke-width="2"/>
+                    <path d="M8 20H40" stroke="#c3a87a" stroke-width="2"/>
+                    <path d="M16 8V16" stroke="#c3a87a" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M32 8V16" stroke="#c3a87a" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <h4>Agree on economics before introduction</h4>
+                <p>The split or referral arrangement is agreed in writing before the first client conversation. No surprises, no ambiguity, no retroactive negotiation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt-section fade-in">
+        <div class="eyebrow">Partner Profile</div>
+        <h2>Who should <em>partner with us</em></h2>
+        <p>Founder Risk Advisors may be a fit for professionals and firms who serve founder-led companies and occasionally encounter risk, continuity, or capital-readiness issues that fall outside their normal book:</p>
+        <div class="two-col">
+            <ul>
+                <li>Benefits agencies</li>
+                <li>Producer groups</li>
+                <li>Life insurance BGAs</li>
+                <li>Executive benefits firms</li>
+                <li>Wealth advisors</li>
+                <li>Estate planning attorneys</li>
+                <li>CPAs</li>
+            </ul>
+            <ul>
+                <li>Commercial insurance brokers</li>
+                <li>PEO consultants</li>
+                <li>Independent sponsors</li>
+                <li>Search fund operators</li>
+                <li>M&A advisors</li>
+                <li>GT Securities affiliates</li>
+                <li>Family office advisors</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="fade-in">
+        <div class="eyebrow">Case Types</div>
+        <h2>Case types <em>we take</em></h2>
+        <p>We are most useful when the issue is important, narrow, and not easily handled through a routine benefits or wealth planning process. Typical case types include:</p>
+        <div class="card-grid">
+            <div class="card">
+                <h4>Key-person risk</h4>
+                <p>Scoping founder and key-person dependency: what the business loses operationally and financially if a principal is gone, and what coverage is warranted.</p>
+            </div>
+            <div class="card">
+                <h4>Buy-sell funding</h4>
+                <p>Most closely held businesses have a buy-sell agreement. Far fewer have a practical funding mechanism behind it.</p>
+            </div>
+            <div class="card">
+                <h4>Founder dependency</h4>
+                <p>For companies where revenue, relationships, or technical capability concentrate in one or two people.</p>
+            </div>
+            <div class="card">
+                <h4>Executive benefits</h4>
+                <p>Retention risk below the C-suite: whether key leaders, partners and senior producers have adequate protection and retention structures.</p>
+            </div>
+            <div class="card">
+                <h4>Business succession exposure</h4>
+                <p>Continuity planning for founder-led businesses approaching transition, recapitalization, or generational transfer.</p>
+            </div>
+            <div class="card">
+                <h4>Transaction readiness</h4>
+                <p>For companies approaching a raise, recapitalization or sale: where risk, benefits and continuity gaps will surface in diligence.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="dark-section fade-in">
+        <div class="eyebrow">Process</div>
+        <h2>How the relationship <em>works</em></h2>
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="step-number">01</div>
+                <h4>You flag a case</h4>
+                <p>You identify a situation that may fit Founder Risk Advisors. No client contact is required at this stage. You can describe the situation generally so we can determine whether it is worth discussing further.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">02</div>
+                <h4>We scope it together</h4>
+                <p>We have a short call to confirm the issue, the client profile, the likely work required, and whether the case fits. Before any introduction, we agree on the scope, partner roles, expected process, and economics.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">03</div>
+                <h4>We agree economics and client contact</h4>
+                <p>The split or referral arrangement is agreed in writing before the first client conversation. We confirm who owns the client communication and how case status is reported back.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">04</div>
+                <h4>We support design, placement, or routing</h4>
+                <p>If the case moves forward, we help structure the next step. That may involve key-person planning, buy-sell funding, executive benefits, PEO review, business continuity planning, or routing to the right specialist partner.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="fade-in">
+        <div class="eyebrow">What You Keep</div>
+        <h2>What partners <em>keep</em></h2>
+        <div class="card-grid">
+            <div class="card">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="14" r="6" stroke="#74142a" stroke-width="2"/>
+                    <path d="M8 38C8 32 14 28 24 28C34 28 40 32 40 38" stroke="#74142a" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <h4>Your client relationship</h4>
+                <p>The client remains your client. We do not approach them about other lines of business or attempt to replace your advisory role.</p>
+            </div>
+            <div class="card">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="6" y="10" width="36" height="28" rx="2" stroke="#14512b" stroke-width="2"/>
+                    <path d="M6 18H42" stroke="#14512b" stroke-width="2"/>
+                    <circle cx="24" cy="28" r="4" stroke="#14512b" stroke-width="2"/>
+                </svg>
+                <h4>Your existing lines of business</h4>
+                <p>We do not cross-sell. Your benefits, wealth, insurance, or other lines remain yours.</p>
+            </div>
+            <div class="card">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 4L6 14V24C6 34 14 42 24 44C34 42 42 34 42 24V14L24 4Z" stroke="#c3a87a" stroke-width="2" stroke-linejoin="round"/>
+                    <path d="M18 24L22 28L30 20" stroke="#c3a87a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h4>Your advisory role</h4>
+                <p>You remain the primary advisor. We support the specific issue and coordinate with you throughout.</p>
+            </div>
+            <div class="card">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="18" stroke="#74142a" stroke-width="2"/>
+                    <path d="M24 12V24L32 28" stroke="#74142a" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <h4>Your visibility into the case</h4>
+                <p>We agree in advance who supports renewals or reviews, and how case status is reported back to the referring partner.</p>
+            </div>
+            <div class="card">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="8" y="12" width="32" height="28" rx="2" stroke="#14512b" stroke-width="2"/>
+                    <path d="M16 24H32" stroke="#14512b" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M16 30H24" stroke="#14512b" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M16 18H32" stroke="#14512b" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <h4>Your agreed economics</h4>
+                <p>The split or referral arrangement is agreed in writing before the first client conversation. No surprises on economics.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt-section fade-in">
+        <div class="eyebrow">Boundaries</div>
+        <h2>What we <em>do not do</em></h2>
+        <div class="two-col">
+            <div>
+                <h4>No cross-selling</h4>
+                <p>We do not approach your client about benefits, wealth, insurance, or any line you already hold.</p>
+                <h4>No going direct</h4>
+                <p>Introductions come through you unless otherwise agreed. We do not bypass the referring partner.</p>
+            </div>
+            <div>
+                <h4>No surprises on economics</h4>
+                <p>The split or referral arrangement is agreed in writing before the first client conversation.</p>
+                <h4>No forced cases</h4>
+                <p>If a case is not a fit, we say so quickly and hand it back. We only take cases we can do well.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="fade-in">
+        <div class="eyebrow">Referral Signals</div>
+        <h2>Good referral <em>signals</em></h2>
+        <div class="signal-grid">
+            <div class="signal-item">
+                <p>A founder-led company depends heavily on one person.</p>
+            </div>
+            <div class="signal-item">
+                <p>A buy-sell agreement exists, but the funding is unclear.</p>
+            </div>
+            <div class="signal-item">
+                <p>A partner, founder, or key executive is underinsured or uninsured.</p>
+            </div>
+            <div class="signal-item">
+                <p>A business is preparing for capital, acquisition, succession, or sale.</p>
+            </div>
+            <div class="signal-item">
+                <p>A benefits agency sees a continuity or executive-benefits issue outside its normal book.</p>
+            </div>
+            <div class="signal-item">
+                <p>A wealth advisor sees a business-owner risk issue that needs more focused support.</p>
+            </div>
+            <div class="signal-item">
+                <p>An independent sponsor needs a post-close risk, benefits, or continuity review.</p>
+            </div>
+            <div class="signal-item">
+                <p>A company has outgrown its HR, payroll, benefits, or PEO setup.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt-section fade-in">
+        <div class="eyebrow">Why Us</div>
+        <h2>Why partners <em>work with us</em></h2>
+        <p>Founder Risk Advisors brings founder-level business judgment, capital markets perspective, and risk-advisory focus to complex situations.</p>
+        <p>We understand that the issue is not simply whether an insurance product can be placed. The larger question is whether the company's risk, benefits, continuity, and capital readiness support the enterprise value the founder is building.</p>
+        <p>Founded by Andrew Glaze, CFA, who is also CIO and founder of Equitable Capital Advisors. That capital-markets background — capital raising, private credit and M&A — shapes how these cases are framed: insurance and benefits as enterprise-value infrastructure, not standalone products.</p>
+    </section>
+
+    <section id="partner-form" class="fade-in">
+        <div class="eyebrow">Schedule a consultation</div>
+        <h2>Become a <em>partner</em></h2>
+        <p style="text-align: center; max-width: 700px; margin: 0 auto 2rem;">A twenty-minute call is usually enough to determine whether there is a fit. Fill out the form below and we'll be in touch within one business day.</p>
+        <form id="leadForm" action="https://victoryvision.app.n8n.cloud/webhook/pages/lead-submission" method="POST">
+            <input type="hidden" name="source" value="partners">
+            <input type="hidden" name="customer_id" value="andrew.glaze@gmail.com">
+            
+            <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="company">Company *</label>
+                <input type="text" id="company" name="company" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Tell us about the case or partnership opportunity</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+            
+            <button type="submit">Submit Partner Inquiry</button>
+        </form>
+        
+        <div class="thank-you" id="thankYou">
+            <h3>Thank you for your interest</h3>
+            <p>We've received your inquiry and will be in touch within one business day.</p>
+        </div>
+    </section>
+
+    <section class="disclosure">
+        <p><strong>Disclosure:</strong> Founder Risk Advisors is an independent risk advisory practice. Insurance products and services are provided through appropriately licensed third-party specialists. Andrew Glaze is a registered representative of GT Securities, LLC, member FINRA/SIPC. Advisory services are offered through Equitable Capital Advisors, a registered investment adviser. Founder Risk Advisors is not a broker-dealer or insurance carrier. Referral arrangements exist with licensed insurance professionals, benefits agencies, and other service providers; compensation may be received for referrals. No client relationship is created by submission of this form or by visiting this website. All case engagements are subject to written agreement, appropriate licensing, and regulatory compliance. This page is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any security or insurance product.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Founder Risk Advisors. All rights reserved.</p>
+        <div>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="mailto:glaze@founderriskadvisors.com">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.getElementById('leadForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData.entries());
+            
+            try {
+                const response = await fetch('https://victoryvision.app.n8n.cloud/webhook/pages/lead-submission', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    e.target.style.display = 'none';
+                    document.getElementById('thankYou').classList.add('visible');
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                alert('There was an error submitting the form. Please try again or contact us directly at glaze@founderriskadvisors.com');
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+<script>
+(function(){
+  var PAGE_ID="196",CUSTOMER_ID="andrew.glaze@gmail.com",AB_VARIANT="A";
+  var TRACK="https://victoryvision.app.n8n.cloud/webhook/pages/track";
+  function sid(){var m=document.cookie.match(/vv_sid=([^;]+)/);if(m)return m[1];var v=Math.random().toString(36).slice(2)+Date.now().toString(36);document.cookie="vv_sid="+v+"; path=/; max-age=7776000; SameSite=Lax";return v;}
+  function track(t,e){try{fetch(TRACK,{method:"POST",headers:{"Content-Type":"application/json"},keepalive:true,body:JSON.stringify({page_id:parseInt(PAGE_ID,10),customer_id:CUSTOMER_ID,event_type:t,session_id:sid(),ab_variant:AB_VARIANT==="null"?null:AB_VARIANT,metadata:Object.assign({path:location.pathname,referrer:document.referrer},e||{})})}).catch(function(){});}catch(_){}}
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",function(){track("visit");});else track("visit");
+  document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a");if(a&&a.href)track("click",{click_target:a.href});},true);
+  document.addEventListener("submit",function(e){if(e.target&&e.target.tagName==="FORM")track("form_submit",{});},true);
+})();
+</script>
+</body>
+</html>
